@@ -32,6 +32,11 @@ model_list:
       api_version: 2023-06-01-preview
       api_base: https://openai-gpt-4-test-v-1.openai.azure.com/
       api_key: sk-defaultKey # use `os.environ/AZURE_API_KEY` for production. The `os.environ/` prefix tells litellm to read this from the env. See https://docs.litellm.ai/docs/simple_proxy#load-api-keys-from-vault
+  - model_name: gemini-pro
+    litellm_params:
+      model: vertex_ai/gemini-pro
+      vertex_project: "os.environ/GCP_PROJECT"
+      vertex_location: "os.environ/GCP_LOCATION"
 
 litellm_settings:
   drop_params: True
