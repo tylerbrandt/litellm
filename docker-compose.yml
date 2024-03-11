@@ -8,3 +8,9 @@ services:
       - "4000:4000"
     environment:
       - AZURE_API_KEY=sk-123
+      - DATABASE_URL=postgresql://postgres:sekrit@db:5432
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=sekrit
